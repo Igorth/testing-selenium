@@ -9,6 +9,7 @@ public class LeiloesPage {
     //Page object -> é uma classe que representa aquela página
 
     private static final String URL_CADASTRO_LEILAO = "http://localhost:8080/leiloes/new";
+    private static final String URL_LEILOES = "http://localhost:8080/leiloes";
     private WebDriver browser;
 
     public LeiloesPage(WebDriver browser) {
@@ -33,5 +34,9 @@ public class LeiloesPage {
         return colunaNome.getText().equals(nome)
                 && colunaDataAbertura.getText().equals(hoje)
                 && colunaValorInicial.getText().equals(valor);
+    }
+
+    public boolean isPaginaAtual() {
+        return this.browser.getCurrentUrl().equals(URL_LEILOES);
     }
 }
