@@ -23,7 +23,7 @@ public class LoginTest {
     @Test
     public void deveriaEfetuarLoginComDadosValidos() {
         this.paginaDeLogin.preencherFormularioDeLogin("fulano", "pass");
-        this.paginaDeLogin.efetuaLogin();
+        this.paginaDeLogin.efetuarLogin();
 
         assertFalse(paginaDeLogin.isPaginaDeLogin());
         assertEquals("fulano", paginaDeLogin.getNomeUsuarioLogado());
@@ -32,7 +32,7 @@ public class LoginTest {
     @Test
     public void naoDeveriaLogarcomDadosInvalidos() {
         this.paginaDeLogin.preencherFormularioDeLogin("invalido", "123123");
-        this.paginaDeLogin.efetuaLogin();
+        this.paginaDeLogin.efetuarLogin();
 
         assertTrue(paginaDeLogin.isPaginaDeLoginComDadosInvalidos());
         assertNull(paginaDeLogin.getNomeUsuarioLogado());
